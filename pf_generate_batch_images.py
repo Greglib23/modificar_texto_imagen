@@ -2,7 +2,7 @@ import os
 from gimpfu import *
 import csv
 
-def modificar_texto_imagen(csv_file,filename,output_dir,export_format): 
+def pf_generate_batch_images(csv_file,filename,output_dir,export_format): 
     # Read the data of csv
     with open(csv_file, 'r') as file:
         csv_reader = csv.reader(file)
@@ -55,16 +55,16 @@ def modificar_texto_imagen(csv_file,filename,output_dir,export_format):
 
         count +=1
 
-# Registro del plugin en GIMP
+# Plugin register at GIMP
 register(
-    "python_fu_modificar_texto_imagen",
-    "Modificar texto de imagen desde CSV",
-    "Lee un archivo CSV y modifica el texto de una imagen en el espacio de trabajo, luego la exporta.",
-    "Tu Nombre",
-    "Tu Nombre",
+    "pf_generate_batch_images",
+    "Modify the text of your images from a CSV and then export them",
+    "Generate batch images by modifying their text using information from a CSV. Support: https://github.com/Greglib23",
+    "greglib23",
+    "greglib23",
     "2024",
-    "Modificar Texto de Imagen...",
-    "",  # Tipo de imagen que maneja el plugin
+    "Batch images...",
+    "",  # Type of image that the plugin handle
     [
         (PF_FILE, "csv_file", "Archivo CSV", ""),
         (PF_STRING, "filename", "Output: ",    "filename"),        
@@ -72,8 +72,8 @@ register(
         (PF_RADIO, "export_format", "Export format: ", "jpeg", (("JPEG", "jpeg"), ("PNG", "png"))),
     ],
     [],
-    modificar_texto_imagen,
-    menu="<Image>/Filters/Modificar Texto CSV",
+    pf_generate_batch_images,
+    menu="<Image>/Filters/Batch Text from CSV",
 )
 
 # Ejecutar el registro
