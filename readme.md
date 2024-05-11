@@ -1,6 +1,17 @@
+
 # Batch images from CSV and export to .png or .jpeg
 
 This extension is maked in python and handle the text of your image to export it as an new image with the text provided by a .csv file
+
+## How to install
+
+### Windows
+
+Open your plug-in folder of GIMP (Normally on C:\\\\Users\\{UserName}\\AppData\\Roaming\\GIMP\\{version}\\plug-ins)
+
+Then create a file with a the name "pf_generate_batch_images.py" and copy the content of the plugin into it
+
+You can create a folder name "pf_generate_batch_images" and create the "pf_generate_batch_images.py" into it for more order in scafolding
 
 ## How to use
 
